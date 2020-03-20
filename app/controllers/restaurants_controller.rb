@@ -11,4 +11,12 @@ class RestaurantsController < ApplicationController
     # i need to instantiate my review object
     @review = Review.new
   end
+
+  def destroy
+    # need to grab the restaurant to destroy
+    @restaurant = Restaurant.find(params[:id])
+    # destroy it
+    @restaurant.destroy
+    # redirect_to restaurants_path
+  end
 end
